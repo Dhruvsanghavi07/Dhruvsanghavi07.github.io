@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhruv Sanghavi · Software & ML Engineer</title>
+<meta name="description" content="Dhruv Sanghavi, Computer Science senior at Penn State (May 2027). Software engineering, machine learning and data: projects, research and contact.">
+<meta property="og:title" content="Dhruv Sanghavi · Software & ML Engineer">
+<meta property="og:description" content="From raw data to shipped products. CS @ Penn State '27, open to new-grad SWE, ML and data roles.">
+<meta property="og:image" content="https://dhruvsanghavi07.github.io/og.png">
+<meta property="og:url" content="https://dhruvsanghavi07.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --bg:#070f1f; --bg2:#0b1a33; --card:#0f2140; --line:rgba(140,180,230,.16);
+    --text:#e8eef7; --muted:#a9b8cc; --dim:#7f93ad; --accent:#6fd3ff; --accent2:#9be7c4;
+    --chip:rgba(111,211,255,.09); --chipline:rgba(111,211,255,.32); --shadow:0 12px 40px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#f6f8fb; --bg2:#eef3f9; --card:#ffffff; --line:rgba(20,40,80,.12);
+      --text:#0d1b2e; --muted:#3f5168; --dim:#5f7088; --accent:#0a72b8; --accent2:#13895f;
+      --chip:rgba(10,114,184,.07); --chipline:rgba(10,114,184,.28); --shadow:0 10px 30px rgba(15,35,70,.08);}
+    .btn.primary{color:#fff}
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  nav .brand{font-weight:800;color:var(--text);letter-spacing:-.01em}
+  nav .links{display:flex;gap:18px;font-size:14.5px;font-weight:600}
+  nav .links a{color:var(--muted)} nav .links a:hover{color:var(--text);text-decoration:none}
+  header{padding:72px 0 56px;background:radial-gradient(ellipse 70% 90% at 80% 20%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%)}
+  .hero{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+  .kicker{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(34px,6vw,56px);line-height:1.05;margin:12px 0 14px;letter-spacing:-.02em}
+  h1 span{color:var(--accent)}
+  .lead{font-size:18.5px;color:var(--muted);max-width:620px;margin:0}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:700;font-size:15px;border:1px solid var(--chipline);color:var(--text);background:var(--chip)}
+  .btn.primary{background:var(--accent);color:#06132a;border-color:transparent}
+  .btn:hover{text-decoration:none;filter:brightness(1.08)}
+  .photo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--chipline);box-shadow:var(--shadow)}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-size:28px;margin:0 0 8px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 28px;max-width:680px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .card h3{margin:0 0 6px;font-size:19px;line-height:1.3}
+  .card p{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 16px}
+  .tag{font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--chip);border:1px solid var(--chipline);color:var(--text)}
+  .card .links{display:flex;gap:14px;font-weight:700;font-size:14.5px}
+  .tl{display:grid;gap:16px}
+  .role{display:grid;grid-template-columns:200px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+  .role .when{color:var(--dim);font-weight:600;font-size:14px}
+  .role h3{margin:0;font-size:17.5px}
+  .role .org{color:var(--accent);font-weight:600;font-size:14.5px;margin:2px 0 8px}
+  .role ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+  .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .skills div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .skills h4{margin:0 0 8px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .skills p{margin:0;color:var(--muted);font-size:14.5px}
+  .contact{display:flex;flex-wrap:wrap;gap:12px}
+  footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px;border-top:1px solid var(--line)}
+  @media (max-width:860px){
+    .grid{grid-template-columns:1fr} .skills{grid-template-columns:1fr 1fr}
+    .hero{grid-template-columns:1fr} .photo{width:132px;height:132px;order:-1}
+    .role{grid-template-columns:1fr;gap:4px} nav .links{gap:12px;font-size:13.5px}
+  }
+  @media (max-width:480px){ .skills{grid-template-columns:1fr} nav .links a.hide-sm{display:none} header{padding:44px 0 40px} }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top">Dhruv Sanghavi</a>
+  <div class="links"><a href="#projects">Projects</a><a href="#experience" class="hide-sm">Experience</a><a href="#skills" class="hide-sm">Skills</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header id="top"><div class="wrap hero">
+  <div>
+    <div class="kicker">Software Engineering · Machine Learning · Data</div>
+    <h1>From raw data to <span>shipped products</span></h1>
+    <p class="lead">I'm a Computer Science senior at Penn State, graduating May 2027. I build end to end: clean the data, train and test the model, wrap it in an API, and ship the app.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/dhruv-sanghavi07" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Dhruvsanghavi07" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="mailto:dhruv.7.sanghavi@gmail.com">Email me</a>
+    </div>
+  </div>
+  <img class="photo" src="photo.jpg" alt="Portrait of Dhruv Sanghavi" width="200" height="200">
+</div></header>
+
+<main>
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sub">Three public projects, each tested and deployed automatically. Two of them run live in your browser.</p>
+  <div class="grid">
+    <article class="card">
+      <h3>Spleen CT Segmentation Web App</h3>
+      <p>Pick a CT scan of a patient the model has never seen and watch it outline the spleen in real time. The model runs entirely on your device; no server, no upload.</p>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">U-Net</span><span class="tag">ONNX Runtime Web</span><span class="tag">JavaScript</span><span class="tag">GitHub Actions</span></div>
+      <div class="links"><a href="https://dhruvsanghavi07.github.io/ct-segmentation-web/" target="_blank" rel="noopener">Live demo →</a><a href="https://github.com/Dhruvsanghavi07/ct-segmentation-web" target="_blank" rel="noopener">Code</a></div>
+    </article>
+    <article class="card">
+      <h3>Grounded DocQA</h3>
+      <p>Question answering over technical documentation that refuses to make things up: every sentence must cite a passage, and a checker blocks any claim the passage doesn't support.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag">RAG</span></div>
+      <div class="links"><a href="https://github.com/Dhruvsanghavi07/grounded-docqa" target="_blank" rel="noopener">Code & results →</a></div>
+    </article>
+    <article class="card">
+      <h3>Climate Forecast Pipeline</h3>
+      <p>A data pipeline that refreshes itself monthly: download NOAA records, validate them, load a SQL warehouse, compare five forecasting models and publish a live dashboard.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">ETL</span><span class="tag">scikit-learn</span><span class="tag">Plotly</span></div>
+      <div class="links"><a href="https://dhruvsanghavi07.github.io/climate-forecast-pipeline/" target="_blank" rel="noopener">Live dashboard →</a><a href="https://github.com/Dhruvsanghavi07/climate-forecast-pipeline" target="_blank" rel="noopener">Code</a></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <p class="sub">Research in deep learning and data, plus front-end engineering in industry.</p>
+  <div class="tl">
+    <div class="role"><div class="when">Oct 2025 – Present</div><div>
+      <h3>Undergraduate Research Assistant, Deep Learning & Biomedical Imaging</h3>
+      <div class="org">Penn State Harrisburg & Penn State College of Medicine</div>
+      <ul><li>Built the lab's first automated pipeline for segmenting the brain, heart and eyes in zebrafish micro-CT scans (PyTorch U-Net), and chose it over a DeepLabV3+ baseline for the lab's journal manuscript.</li>
+          <li>First Place, 2026 ICDS Symposium research poster competition; selected for Penn State's Multi-Campus REU (Summer 2026).</li></ul>
+    </div></div>
+    <div class="role"><div class="when">Sep 2026 – Present</div><div>
+      <h3>Undergraduate Research Assistant, PregnAlert</h3>
+      <div class="org">Penn State (Dr. Kristin Sznajder)</div>
+      <ul><li>Building multi-year climate datasets in a reusable notebook that supplies data for a doctoral dissertation on how climate exposure affects pregnant women.</li></ul>
+    </div></div>
+    <div class="role"><div class="when">May 2024 – Jan 2025</div><div>
+      <h3>Web Designer (Intern, converted to Part-Time)</h3>
+      <div class="org">Ecosmob Technologies · Ahmedabad, India</div>
+      <ul><li>Converted from intern to part-time within the first month by building responsive HTML/CSS components for client-facing platforms at an enterprise VoIP software company.</li></ul>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="sub">B.S. Computer Science, Penn State Harrisburg (May 2027), in a 2+2 dual-degree program that began at Nirma University, India.</p>
+  <div class="skills">
+    <div><h4>Languages</h4><p>Python, Java, C++, C, SQL, TypeScript, JavaScript, HTML/CSS</p></div>
+    <div><h4>ML & Data</h4><p>PyTorch, scikit-learn, Pandas, NumPy, computer vision, LLMs & RAG, forecasting, ONNX</p></div>
+    <div><h4>Software & Cloud</h4><p>FastAPI, REST APIs, React, Docker, AWS, Git, GitHub Actions, pytest</p></div>
+    <div><h4>Data Systems</h4><p>SQLite, MySQL, Oracle & PL/SQL, ETL pipelines, Plotly dashboards</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Let's talk</h2>
+  <p class="sub">I'm looking for new-grad Software Engineering, Machine Learning and Data roles starting in 2027.</p>
+  <div class="contact">
+    <a class="btn primary" href="mailto:dhruv.7.sanghavi@gmail.com">dhruv.7.sanghavi@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/dhruv-sanghavi07" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/Dhruvsanghavi07" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Dhruv Sanghavi · Middletown, Pennsylvania</div></footer>
+</body>
+</html>
